@@ -11,6 +11,7 @@ Copyright (c) 2020 GPL samuel braikeh
 
  *  This file incorporates work covered by the following copyright and permission notice:  
  
+---------------------------------------------------------------------------------
 Copyright (c) 2016-2020, The Cytoscape Consortium.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -30,6 +31,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---------------------------------------------------------------------------------
+Copyright (c) OpenStreetMap contributors
+
+Les cartes sont sous licence Creative Commons Attribution-ShareAlike 2.0 license (CC BY-SA).
+Par ailleurs les données sont disponibles sous licence Open Database. 
+(voir www.opendatacommons.org/licenses/odbl)
+Plus d'informations : https://osm.org/copyright
 
 ##################################################################################
 
