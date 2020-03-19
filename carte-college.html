@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>leaflet</title>
+	<style>
+	#cy { height:800px; width:1500px; background-image:url("src/osm.png");background-repeat:no-repeat;background-size:contain;}
+	.invisible{display:none;}
+	.depart{background-color: green;}
+	.arrivee{background-color: red;}
+	#container {width: 250px; position:absolute;top:45px;left:30px;}
+	#nav {width: 250px; position:absolute;top:0px;left:30px;}
+	p{height:auto;opacity:0.8;}
+	#container p{background:rgb(250,150,150);padding:5px;}
+	p input{width:60px;}
+	p input[type="radio"]{width:20px;}
+	button{padding:2px;margin:2px;}
+	.copy{cursor:copy;}
+	#cursorText{position:absolute;}
+	</style>
+	<script src="carte.js"></script>
+    <script src="src/cytoscape.min.js"></script>
+</head>
+
+<body>
+
+<div id="cy"></div>
+
+<div id="nav">
+	<p id="back1" class="invisible"><button onclick="back1();">retour (éditer les poids et les contraintes)</button></p>
+	<p id="back2" class="invisible"><button onclick="back2();">retour (éditer le plan)</button></p>
+</div>
+<div id="container">
+	<p id="locker">Place les points et les lignes... 
+	<br/><button onclick="importmap();">Importer le plan.</button>
+	<br/><button onclick="lock();">Plan terminé.</button>
+	</p>
+		
+	<p id="weighter" class="invisible">Fixe les poids (temps de parcours) et les contraintes des arêtes...
+	<br/><button onclick="settimes();">Fixer les temps restants</button>
+	<br/>
+	<button onclick="weighted();">Ok</button>
+	</p>
+
+	<p id="poids" class="invisible">
+	Contraintes des arêtes<br/><br/>
+
+	→ &emsp; escalier   &emsp; <button name="escalier" onclick="addO(this);">+</button><br/>
+	^^ &emsp; abrité	&emsp;&emsp; <button name="abri" onclick="addO(this);">+</button><br/>
+	[] &emsp; porte 	&emsp; <button name="porte" onclick="addO(this);">+</button><br/>
+	▲ &emsp; pente		&emsp; <button name="pente" onclick="addO(this);">+</button><br/>
+	↕ &emsp; ascenceur  &emsp; <button name="ascenceur" onclick="addO(this,'escalier');">+</button><br/>
+	>: &emsp; chien 	&emsp; <button name="chien" onclick="addO(this,'escalier');">+</button><br/>
+	</p>
+	
+	<p id="chemins" class="invisible">Choisis un point de départ et un point d'arrivée.
+	<br/>Fixe les poids sur les contraintes selon les besoins.
+	<br/>Observe le temps de parcours pour les différents trajets proposés.
+	</p>
+	
+	<p id="poids2" class="invisible">
+	Poids des obstacles (en secondes)<br/><br/>
+
+	→ &emsp; escalier
+	&emsp; <input type="texte" value="" onchange="setPoidsObstacle('escalier',this.value);" /><br/>
+	^^ &emsp; abrité
+	&emsp;&emsp; <input type="texte" value="" onchange="setPoidsObstacle('abri',this.value);" /><br/>
+	[] &emsp; porte 
+	&emsp; <input type="texte" value="" onchange="setPoidsObstacle('porte',this.value);" /><br/>
+	▲ &emsp; pente
+	&emsp; <input type="texte" value="" onchange="setPoidsObstacle('pente',this.value);" /><br/>
+	↕ &emsp; ascenceur 
+	&emsp; <input type="texte" value="" onchange="setPoidsObstacle('ascenceur',this.value);" /><br/>
+	>: &emsp; chien  
+	&emsp; <input type="texte" value="" onchange="setPoidsObstacle('chien',this.value);" /><br/>
+	</p>
+	
+	
+	
+	
+	
+	<p id="paths" class="invisible">Chemins <br/> </p>
+	<p id="clock" class="invisible">Temps <br/> </p>
+	<p>Sauver l'image du graphe<button onclick="saveImage()">Go (voir en dessous)</button></p>
+
+</div>
+
+
+
+<img id="png-eg" src="" />
+
+<script src="codev3.js"></script>
+</body>
+
+</html>
+
+
