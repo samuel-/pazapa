@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Pazapa - </title>
-	<link rel="icon" href="favicon.ico" />
+	<title>Pazapa - itinéraires sous contraintes</title>
+	<link rel="icon" href="pazapa.ico" />
 	<style>
 	#cy { height:800px; width:1500px; background-image:url("src/osm.png");background-repeat:no-repeat;background-size:contain;}
 	.invisible{display:none;}
@@ -19,6 +19,8 @@
 	button{padding:2px;margin:2px;}
 	.copy{cursor:copy;}
 	#cursorText{position:absolute;}
+	a {color: black; display: inline-block;}
+	a:hover{font-style: italic;}
 	</style>
 	<script src="carte.js"></script>
     <script src="src/cytoscape.min.js"></script>
@@ -81,9 +83,10 @@
 	<p id="clock" class="invisible">Temps <br/> </p>
 	<p>Sauver l'image du graphe<button onclick="saveImage()">Go (voir en dessous)</button></p>
 	
-	<p>Pazapa
-	<img src="pazapa.png"/>
-	<a href="#">tutoriel de prise en main</a>
+	<p>Pazapa<br/>
+	<img width="64px" height="64px" src="pazapa.ico"/><br/>
+	(2020)<br/>
+	<a href="#">tutoriel de prise en main</a><br/>
 	<a href="https://github.com/samuel-/pazapa">sources et licence</a>
 	</p>
 
